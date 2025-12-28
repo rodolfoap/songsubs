@@ -3,16 +3,16 @@ requires = ["setuptools>=45", "wheel", "setuptools_scm>=6.2"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "guitar-subtitle-creator"
+name = "songsubs"
 version = "1.0.0"
-description = "Create SRT subtitles for guitar backing tracks with visual waveform"
+description = "Create SRT subtitles for backing tracks with visual waveform"
 readme = "README.md"
 requires-python = ">=3.8"
 license = {text = "MIT"}
 authors = [
-    {name = "Guitar Subtitle Creator"}
+    {name = "Backing Tracks Subtitle Creator"}
 ]
-keywords = ["subtitle", "srt", "music", "guitar", "backing track", "waveform"]
+keywords = ["subtitle", "srt", "music", "backing track", "waveform"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: End Users/Desktop",
@@ -34,7 +34,7 @@ dependencies = [
 ]
 
 [project.scripts]
-guitar-subs = "main:main"
+songsubs = "main:main"
 
 [project.urls]
-Homepage = "https://github.com/yourusername/guitar-subtitle-creator"
+Homepage = "https://github.com/rodolfoap/songsubs"

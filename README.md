@@ -1,10 +1,10 @@
-# Subtitle Creator for Guitar Backing Tracks
+# Subtitle Creator for Backing Tracks
 
-A simple Python tkinter application to create .srt subtitle files while playing music videos or audio files. Designed for guitarists who need to mark song sections (parts, solos, etc.) in real-time.
+A simple Python tkinter application to create .srt subtitle files while playing music videos or audio files. Designed for musicians who need to mark song sections (parts, solos, etc.) in real-time.
 
 ## Purpose
 
-When playing guitar over music videos as backing tracks, subtitles help you know which section is coming next:
+When playing over music videos as backing tracks, subtitles help you know which section is coming next:
 - Countdown: "4", "3", "2", "1"
 - Song parts: "Part A1", "Part B", "Part C"
 - Solos: "Solo 1/6", "Solo 2/6", etc.
@@ -79,7 +79,7 @@ Each line creates a button in the application. When clicked during playback, it 
 
 If you installed the package with `pip install .`:
 ```bash
-guitar-subs
+songsubs
 ```
 
 ### Without installation

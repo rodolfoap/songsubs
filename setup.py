@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Setup script for Subtitle Creator for Guitar Backing Tracks
+Setup script for Subtitle Creator for Backing Tracks
 """
 
 from setuptools import setup, find_packages
@@ -11,13 +11,13 @@ this_directory = Path(__file__).parent
 long_description = (this_directory / "README.md").read_text()
 
 setup(
-    name="guitar-subtitle-creator",
+    name="songsubs",
     version="1.0.0",
-    author="Guitar Subtitle Creator",
-    description="Create SRT subtitles for guitar backing tracks with visual waveform",
+    author="Backing Tracks Subtitle Creator",
+    description="Create SRT subtitles for backing tracks with visual waveform",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/yourusername/guitar-subtitle-creator",
+    url="https://github.com/rodolfoap/songsubs",
     packages=find_packages(),
     py_modules=["main"],
     install_requires=[
@@ -28,7 +28,7 @@ setup(
     python_requires=">=3.8",
     entry_points={
         "console_scripts": [
-            "guitar-subs=main:main",
+            "songsubs=main:main",
         ],
     },
     classifiers=[

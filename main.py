@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Subtitle Creator for Guitar Backing Tracks
+Subtitle Creator for Backing Tracks
 A tkinter application to create SRT subtitles while playing media files.
 """
 
@@ -20,7 +20,7 @@ import struct
 class SubtitleCreatorApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("Subtitle Creator for Guitar Backing Tracks")
+        self.root.title("Subtitle Creator for Backing Tracks")
         self.root.geometry("900x700")
 
         # VLC player setup
@@ -592,7 +592,8 @@ class SubtitleCreatorApp:
             self.waveform_canvas.create_line(
                 x, center_y - height,
                 x, center_y + height,
-                fill='#4CAF50',
+                #fill='#4CAF50',
+                fill='#00FF00',
                 width=1
             )
 
