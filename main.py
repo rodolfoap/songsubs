@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!.venv/bin/python3
 """
 Subtitle Creator for Backing Tracks
 A tkinter application to create SRT subtitles while playing media files.
