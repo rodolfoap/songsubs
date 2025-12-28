@@ -35,6 +35,7 @@ class SubtitleCreatorApp:
         self.buttons_config = []
         self.user_seeking = False  # Flag to indicate user is dragging slider
         self.waveform_data = None  # Waveform data for visualization
+        self.position_line = None  # Canvas line for current position indicator
 
         # Load button configuration
         self.load_buttons_config()
@@ -266,6 +267,22 @@ class SubtitleCreatorApp:
                 if not self.user_seeking:
                     position = (current_time / total_time) * 100
                     self.time_slider.set(position)
+
+                # Update position line on waveform
+                if self.position_line and self.waveform_data is not None:
+                    canvas_width = self.waveform_canvas.winfo_width()
+                    canvas_height = self.waveform_canvas.winfo_height()
+
+                    if canvas_width > 1 and canvas_height > 1:
+                        # Calculate x position based on current time
+                        x_pos = (current_time / total_time) * canvas_width
+
+                        # Update the line coordinates
+                        self.waveform_canvas.coords(
+                            self.position_line,
+                            x_pos, 0,
+                            x_pos, canvas_height
+                        )
 
         # Schedule next update
         self.root.after(100, self.update_time)
@@ -603,6 +620,14 @@ class SubtitleCreatorApp:
             canvas_width, center_y,
             fill='#555555',
             width=1
+        )
+
+        # Create position indicator line (white vertical line)
+        self.position_line = self.waveform_canvas.create_line(
+            0, 0,
+            0, canvas_height,
+            fill='white',
+            width=2
         )
 
     def on_waveform_click(self, event):
