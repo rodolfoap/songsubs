@@ -114,6 +114,10 @@ class SubtitleCreatorApp:
                   width=5).pack(side=tk.LEFT, padx=2)
         ttk.Button(control_frame, text=">>>", command=lambda: self.seek(30000),
                   width=5).pack(side=tk.LEFT, padx=2)
+        
+        # Speed control
+        self.speed_button = ttk.Button(control_frame, text="1x", command=self.toggle_speed, width=4)
+        self.speed_button.pack(side=tk.LEFT, padx=5)
 
         # Subtitle buttons frame
         button_frame = ttk.LabelFrame(self.root, text="Subtitle Buttons", padding="10")
@@ -214,6 +218,23 @@ class SubtitleCreatorApp:
         self.player.stop()
         self.play_button.config(text="Play")
         self.is_playing = False
+
+    def toggle_speed(self):
+        """Toggle playback speed between 1x and 2x"""
+        if not self.player:
+            return
+            
+        current_rate = self.player.get_rate()
+        # Allow some float tolerance
+        if abs(current_rate - 1.0) < 0.1:
+            new_rate = 2.0
+            text = "2x"
+        else:
+            new_rate = 1.0
+            text = "1x"
+            
+        self.player.set_rate(new_rate)
+        self.speed_button.config(text=text)
 
     def seek(self, ms):
         """Seek forward or backward by milliseconds"""
